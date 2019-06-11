@@ -1,0 +1,64 @@
+section{
+	background: #ccc;
+}
+main{
+	display: flex;
+	margin-top: 3vw;
+}
+.m-left{
+	width: 17vw;
+	margin-left: 4vw;
+}
+.m-left li{
+	padding-bottom: .5vw;
+}
+.m-right{
+	width: 70vw;
+	margin-bottom: 8vw;
+	background: #fff;
+}
+.m-padding{
+	padding: 1.6% 2%;
+	display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.m-right ul{
+	width: 100%;	
+	display: flex;
+	flex-wrap:wrap;
+}
+.m-right ul:nth-child(2){
+	width: 44.6vw;
+}
+.m-right ul:nth-child(3){
+	width: 22vw;
+}
+.m-right li{
+	width: 22vw;
+	height: 14.6vw;
+	margin-right: .6vw;
+	margin-bottom: .6vw;
+}
+.m-right img{
+	width: 100%;
+	height: 100%;
+}
+.m-right ul:nth-child(1) li:nth-child(3n){
+	margin-right: 0;
+}
+.m-right ul li:last-child{
+	margin-right: 0;
+}
+.m-article{
+	width: 45vw;
+	align-self: flex-start;
+}	
+h5{
+	font-size:1.5vw;
+    margin-bottom: 0.5vw;
+}
+.m-article p{
+	font-size: 1vw;
+    line-height: 1.6vw;
+}
