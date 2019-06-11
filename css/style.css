@@ -11,8 +11,8 @@ header{padding-top:4vw;font-size:1.3vw}
 header .logo{margin-left:4vw}
 header .logo img{height:4.5vw}
 header .zn-en{float:right;margin-right:3vw;}
+header .nav{display:flex;width:55vw;margin:auto;justify-content:space-between;}
 header .nav,header .nav-left{margin-bottom:.8vw}
-header .nav{display:flex;width:55vw}
 header .nav-left{margin-left:4vw;margin-top:1.2vw;font-size:1.6vw;width:15vw;display:flex;justify-content:space-between;}
 header .nav-left a{width:50%}
 header .nav-left a:first-child{text-align:left;}

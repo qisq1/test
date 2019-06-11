@@ -60,5 +60,6 @@ h5{
 }
 .m-article p{
 	font-size: 1vw;
-    line-height: 1.6vw;
+	text-align:justify;
+    /*line-height: 1.6vw;*/
 }
