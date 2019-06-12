@@ -12,16 +12,21 @@ main{
 .m-left li{
 	padding-bottom: .5vw;
 }
+.m-left a{
+	font-size: 1.3vw;
+}
 .m-right{
 	width: 70vw;
 	margin-bottom: 8vw;
 	background: #fff;
 }
-.m-padding{
+.m-padding,.m-padding2{
 	padding: 1.6% 2%;
+}
+.m-padding{
 	display: flex;
     flex-direction: column;
-    align-items: flex-end;
+	align-items: flex-end;
 }
 .m-right ul{
 	width: 100%;	
