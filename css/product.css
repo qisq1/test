@@ -1,6 +1,7 @@
 section{
 	background: url(../images/bg.jpg);
-	background-size: 100%
+	background-size: 100%;
+	color: #4a4a4a;
 }
 main{
 	display: flex;
@@ -15,6 +16,7 @@ main{
 }
 .m-left a{
 	font-size: 1.3vw;
+	color: #4a4a4a;
 }
 .m-right{
 	width: 70vw;
@@ -62,10 +64,14 @@ main{
 }	
 h5{
 	font-size:1.5vw;
-    margin-bottom: 0.5vw;
+	margin-bottom: 0.5vw;
+	font-weight: 300;
 }
 .m-article p{
 	font-size: 1vw;
 	text-align:justify;
     /*line-height: 1.6vw;*/
+}
+footer{
+	overflow:hidden;
 }
