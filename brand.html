@@ -3,35 +3,13 @@
 <head>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/brand.css" />
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
 	<title>旗下品牌</title>
 	<style type="text/css">
-		main{
-			display: flex;
-			margin:0 3vw 0 4vw;
-		}
-		.m-left{
-			display: flex;
-		    flex-direction: column;
-		    align-items: center;
-			width: 17vw;
-		}
-		.m-left div{
-			height: 10vw;
-		}
-		.m-left div:nth-child(1) img{
-			width: 10vw;
-		}
-		.m-left div:nth-child(2) img{
-			width: 17vw;
-		}
-		.m-left div:nth-child(3) img{
-			width: 5vw;
-		}		
-		.m-right{
-			flex:1;
-			height: 46.7vw;
-			background: #b5b5b5;
-		}
+		.swiper-container{width:80%;height:90%;position: relative;left: 6vw;top:2vw;display: none;}
+		.swiper-container .swiper-slide{display: flex;justify-content: center;align-items: center;}
+		.swiper-container img{max-width:100%;max-height:100%}
 	</style>
 </head>
 <body>
@@ -48,14 +26,67 @@
 		</header>
 		<main>
 			<div class="m-left">
-				<div><img src="images/PClogo.jpg" alt=""></div>
-				<div><img src="images/bm.png" alt=""></div>
-				<div><img src="images/Braemare kids.jpg" alt=""></div>
+				<div>
+					<img src="images/PClogo.jpg" alt="">
+					<dl>
+						<dd><a href="javascript:;" data-id="1" data-click="0">2017 catalogue</a></dd>
+						<dd><a href="javascript:;">2017 video</a></dd>
+						<dd><a href="javascript:;">2018 catalogue</a></dd>
+					</dl>
+				</div>
+				<div>
+					<img src="images/bm.png" alt="">
+					<dl>
+						<dd><a href="javascript:;" data-id="2" data-click="0">2017 catalogue</a></dd>
+					</dl>
+				</div>
+				<div>
+					<img src="images/Braemare kids.jpg" alt="">
+					<dl>
+						<dd><a href="javascript:;" data-id="3" data-click="0">2018 catalogue</a></dd>
+					</dl>
+				</div>
 			</div>
 			<div class="m-right">
-				<ul>
-					<li></li>
-				</ul>
+				<div class="swiper-container swiper-container1">
+					<div class="swiper-wrapper">
+					    <div class="swiper-slide"><img src="images/pc/1.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/pc/2.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/pc/3.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/pc/4.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/pc/5.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/pc/6.jpg" /></div>
+					</div>
+					<div class="swiper-pagination"></div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+				<div class="swiper-container swiper-container2">
+					<div class="swiper-wrapper">
+					    <div class="swiper-slide"><img src="images/br/1.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/br/2.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/br/6.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/br/10.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/br/22.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/br/24.jpg" /></div>
+					</div>
+					<div class="swiper-pagination"></div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+				<div class="swiper-container swiper-container3">
+					<div class="swiper-wrapper">
+					    <div class="swiper-slide"><img src="images/kid/IMG_9904.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/kid/IMG_9905.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/kid/IMG_9911.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/kid/IMG_9921.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/kid/IMG_9923.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/kid/IMG_9928.jpg" /></div>
+					</div>
+					<div class="swiper-pagination"></div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
 			</div>
 		</main>
 		<footer>
@@ -65,3 +96,40 @@
 	</section>
 </body>
 </html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript">
+	//点击左侧品牌logo，显示右侧菜单
+	// $('.m-left img').click(function(){
+	// 	$(this).siblings().show().end().parent().siblings().children('dl').hide();
+	// });
+	$('.m-left dl a').click(function(){
+		$('.m-left dl a').removeClass('active');
+		$(this).addClass('active');
+		var id = $(this).attr('data-id')/1;
+		if(!isNaN(id)){
+			$('.swiper-container').hide();
+			$('.swiper-container' + id).show();
+			var isclick = $(this).attr('data-click')/1;
+			if(1 != isclick){
+				new Swiper('.swiper-container' + id, {
+				  slidesPerView: 'auto',
+			      centeredSlides: true,
+				  autoplay: {
+				    delay: 3000,
+				    disableOnInteraction: false,
+				  },
+				  navigation: {
+				    nextEl: '.swiper-button-next',
+				    prevEl: '.swiper-button-prev',
+				  },
+				  pagination: {
+				    el: '.swiper-pagination',
+				    dynamicBullets: true,
+				  },
+				});
+				$(this).attr('data-click',1);
+			}	
+		}
+	});		
+</script>

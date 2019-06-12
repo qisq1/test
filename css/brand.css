@@ -1,0 +1,53 @@
+main{
+	display: flex;
+	margin:4vw 3vw 0 4vw;
+}
+.m-left{
+	padding-top: 1.5vw;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+	width: 17vw;
+}
+.m-left div{
+	height: 10vw;
+	width: 100%;
+	text-align: center;
+}
+.m-left div dl{
+	position: relative;
+	left: 18.5vw;
+}
+.m-left div:nth-child(1) dl{
+	top:-6.7vw;
+}
+.m-left div:nth-child(2) dl{
+	top:-2vw;
+}
+.m-left div:nth-child(3) dl{
+	top:-5vw;
+}
+.m-left div dl dd{
+	text-align: left;
+	height: 1.5vw;
+}
+.m-left div dl dd a{
+	color: #fff;
+	font-size: 1vw;
+}
+.m-left div:nth-child(1) img{
+	width: 10vw;
+}
+.m-left div:nth-child(2) img{
+	width: 17vw;
+	position:relative;
+	top: 1.5vw;
+}
+.m-left div:nth-child(3) img{
+	width: 5vw;
+}		
+.m-right{
+	flex:1;
+	height: 46.7vw;
+	background: #b5b5b5;
+}
