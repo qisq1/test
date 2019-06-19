@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
 	<title>旗下品牌</title>
 	<style type="text/css">
+		.m-left dl{display: none;}
 		.swiper-container{width:80%;height:90%;position: relative;left: 6vw;top:2vw;display: none;}
 		.swiper-container .swiper-slide{display: flex;justify-content: center;align-items: center;}
 		.swiper-container img{max-width:100%;max-height:100%}
@@ -29,9 +30,9 @@
 				<div>
 					<img src="images/PClogo.jpg" alt="">
 					<dl>
-						<dd><a href="javascript:;" data-id="1" data-click="0">2017 catalogue</a></dd>
-						<dd><a href="javascript:;">2017 video</a></dd>
-						<dd><a href="javascript:;">2018 catalogue</a></dd>
+						<dd><a href="javascript:;" data-id="4" data-click="0">2017 catalogue</a></dd>
+						<dd><a href="javascript:;" data-id="10">2017 video</a></dd>
+						<dd><a href="javascript:;" data-id="1" data-click="0">2018 catalogue</a></dd>
 					</dl>
 				</div>
 				<div>
@@ -50,12 +51,12 @@
 			<div class="m-right">
 				<div class="swiper-container swiper-container1">
 					<div class="swiper-wrapper">
-					    <div class="swiper-slide"><img src="images/pc/1.jpg" /></div>
-					    <div class="swiper-slide"><img src="images/pc/2.jpg" /></div>
-					    <div class="swiper-slide"><img src="images/pc/3.jpg" /></div>
-					    <div class="swiper-slide"><img src="images/pc/4.jpg" /></div>
-					    <div class="swiper-slide"><img src="images/pc/5.jpg" /></div>
-					    <div class="swiper-slide"><img src="images/pc/6.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/pc2018/1.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/pc2018/2.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/pc2018/3.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/pc2018/4.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/pc2018/5.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/pc2018/6.jpg" /></div>
 					</div>
 					<div class="swiper-pagination"></div>
 					<div class="swiper-button-next"></div>
@@ -76,16 +77,39 @@
 				</div>
 				<div class="swiper-container swiper-container3">
 					<div class="swiper-wrapper">
-					    <div class="swiper-slide"><img src="images/kid/IMG_9904.jpg" /></div>
-					    <div class="swiper-slide"><img src="images/kid/IMG_9905.jpg" /></div>
-					    <div class="swiper-slide"><img src="images/kid/IMG_9911.jpg" /></div>
-					    <div class="swiper-slide"><img src="images/kid/IMG_9921.jpg" /></div>
-					    <div class="swiper-slide"><img src="images/kid/IMG_9923.jpg" /></div>
-					    <div class="swiper-slide"><img src="images/kid/IMG_9928.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/kid/9904.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/kid/9905.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/kid/9911.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/kid/9921.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/kid/9923.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/kid/9928.jpg" /></div>
 					</div>
 					<div class="swiper-pagination"></div>
 					<div class="swiper-button-next"></div>
 					<div class="swiper-button-prev"></div>
+				</div>
+				<div class="swiper-container swiper-container4">
+					<div class="swiper-wrapper">
+					    <div class="swiper-slide"><img src="images/pc2017/6579.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/pc2017/7544.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/pc2017/7645.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/pc2017/7874.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/pc2017/7984.jpg" /></div>
+					    <div class="swiper-slide"><img src="images/pc2017/8516.jpg" /></div>
+					</div>
+					<div class="swiper-pagination"></div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+				<div class="swiper-container swiper-container10">
+					<div class="swiper-wrapper">
+					    <div class="swiper-slide">
+					    	<video controls="controls" width="100%" height="88%">
+					    		<source src="video/pc_video_2017.mp4" type="video/mp4" />
+					    		Your browser does not support the video tag.
+					    	</video>
+					    </div>
+					</div>
 				</div>
 			</div>
 		</main>
@@ -100,9 +124,9 @@
 <script type="text/javascript" src="js/swiper.min.js"></script>
 <script type="text/javascript">
 	//点击左侧品牌logo，显示右侧菜单
-	// $('.m-left img').click(function(){
-	// 	$(this).siblings().show().end().parent().siblings().children('dl').hide();
-	// });
+	$('.m-left img').mouseover(function(){
+		$(this).siblings().slideDown().end().parent().siblings().children('dl').slideUp();
+	});
 	$('.m-left dl a').click(function(){
 		$('.m-left dl a').removeClass('active');
 		$(this).addClass('active');
@@ -110,25 +134,27 @@
 		if(!isNaN(id)){
 			$('.swiper-container').hide();
 			$('.swiper-container' + id).show();
-			var isclick = $(this).attr('data-click')/1;
-			if(1 != isclick){
-				new Swiper('.swiper-container' + id, {
-				  slidesPerView: 'auto',
-			      centeredSlides: true,
-				  autoplay: {
-				    delay: 3000,
-				    disableOnInteraction: false,
-				  },
-				  navigation: {
-				    nextEl: '.swiper-button-next',
-				    prevEl: '.swiper-button-prev',
-				  },
-				  pagination: {
-				    el: '.swiper-pagination',
-				    dynamicBullets: true,
-				  },
-				});
-				$(this).attr('data-click',1);
+			if(id != 10){//10表示video播放器
+				var isclick = $(this).attr('data-click')/1;
+				if(1 != isclick){
+					new Swiper('.swiper-container' + id, {
+					  slidesPerView: 'auto',
+				      centeredSlides: true,
+					  autoplay: {
+					    delay: 3000,
+					    disableOnInteraction: false,
+					  },
+					  navigation: {
+					    nextEl: '.swiper-button-next',
+					    prevEl: '.swiper-button-prev',
+					  },
+					  pagination: {
+					    el: '.swiper-pagination',
+					    dynamicBullets: true,
+					  },
+					});
+					$(this).attr('data-click',1);
+				}
 			}	
 		}
 	});		
