@@ -6,11 +6,8 @@ ul,li{
 img{border:none}
 a{text-decoration:none;color:#000}
 a.active{text-decoration:underline;}
-@font-face{
-	font-family:'fzxbsjw';/*方正小标宋体*/
-	src:url('fonts/fzxbsjw.ttf') format("truetype");
-}
-.first-letter{font-size:3vw;display:inline-block;float:left;font-family:'fzxbsjw'}
+
+.first-letter{width:3vw !important;float:left;position:relative;top:.5vw}
 
 header{padding-top:4vw;font-size:1.3vw}
 header .logo{margin-left:4vw}
