@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+	<title>Home Page</title>
+	<style type="text/css">
+		.swiper-container{width:100vw;height:42vw;}
+		.swiper-container img{width:100%;height:100%}
+		.swiper-button-prev{left:25px}
+		.swiper-button-next{right:25px}
+	</style>
+</head>
+<body>
+<header>
+	<div class="zn-en">
+		<a href="index.html">中文</a> | <a href="javascript:;" class="active">ENGLISH</a>
+	</div>
+	<a href="index_en.html" class="logo"><img src="images/logo.png" /></a>
+	<div class="nav">
+		<a href="company_en.html">Company Overview</a>
+		<a href="product_en.html">Factories</a>
+		<a href="brand_en.html">Brand</a>
+		<a href="news_en.html">News</a>
+		<a href="contact_en.html">Contact us</a>
+		<a href="index_en.html">Back to home</a>
+	</div>
+</header>
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+	    <div class="swiper-slide"><img src="images/banner1.jpg" /></div>
+	    <div class="swiper-slide"><img src="images/banner2.jpg" /></div>
+	    <div class="swiper-slide"><img src="images/banner3.jpg" /></div>
+	    <div class="swiper-slide"><img src="images/banner4.jpg" /></div>
+	    <div class="swiper-slide"><img src="images/banner5.jpg" /></div>
+	</div>
+	<div class="swiper-pagination"></div>
+	<div class="swiper-button-next"></div>
+	<div class="swiper-button-prev"></div>
+</div>
+<div class="line"></div>
+<img src="images/yx.png" class="yx" />
+</body>
+</html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript">
+var swiper = new Swiper('.swiper-container', {
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    dynamicBullets: true,
+  },
+});
+</script>
